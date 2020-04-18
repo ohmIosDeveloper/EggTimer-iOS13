@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     var timer = Timer()
     
     @IBOutlet weak var titleLabel: UILabel!
+
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         
@@ -25,6 +27,8 @@ class ViewController: UIViewController {
         count = timesDictionary[hardness]!
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        
+        progressView.progress = 1
         }
 
     @objc func updateCounter() {
